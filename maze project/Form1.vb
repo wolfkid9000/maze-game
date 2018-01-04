@@ -1218,11 +1218,11 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
     End Sub
 
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles ChangeBackgroundToolStripMenuItem.Click
         Dim randGen As New Random
         Dim intNum1 As Integer
 
@@ -1230,24 +1230,23 @@ Public Class frmMain
 
         Select Case intNum1
             Case 1
-                picBackground.Image = picBack1.Image
+                Me.BackgroundImage = picBack1.Image
             Case 2
-                picBackground.Image = picBack2.Image
+                Me.BackgroundImage = picBack2.Image
             Case 3
-                picBackground.Image = picBack3.Image
+                Me.BackgroundImage = picBack3.Image
             Case 4
-                picBackground.Image = picBack4.Image
+                Me.BackgroundImage = picBack4.Image
         End Select
     End Sub
 
-    Private Sub txtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtName.KeyPress
-        If e.KeyChar <> "." AndAlso
-e.KeyChar <> ControlChars.Back Then
+    Private Sub TxtName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtName.KeyPress
+        If e.KeyChar <> "." AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub ToolStripButton1_Click_1(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+    Private Sub ToolStripButton1_Click_1(sender As Object, e As EventArgs) Handles InstructionsToolStripMenuItem.Click
         MessageBox.Show("Welcome to my maze game.The objective of the game is to get the green square at the end of the maze.To control the red square all you need to do is use the arrow keys.A tip for the game is there are many color gates that block your path. To cross you must find the corosponding color to pass the gate.", "Instructions. ", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
